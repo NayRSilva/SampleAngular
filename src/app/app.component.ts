@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample-angular';
+  pageOpened: string ="recipe";
+
+  onNavigationEvent(nameComponent: string){
+    this.pageOpened = nameComponent;
+  }
 }
