@@ -1,3 +1,4 @@
+import { RecipeService } from 'src/app/services/recipe.service';
 import { Component, OnInit } from '@angular/core';
 import {Recipe} from '../models/recipe.model';
 
@@ -10,18 +11,31 @@ import {Recipe} from '../models/recipe.model';
 
 export class RecipeComponent implements OnInit{
     recipeDetails: Recipe = null;
+    recipeWatcher: any;
 
-    constructor(){
+    constructor(private recipeService: RecipeService){
 
     }
-
     
     ngOnInit(): void {
+
+        this.recipeWatcher = this.recipeService.getChangedObservable();
+        
+        this.recipeWatcher.subscribe({
+            next: (recipe) =>{
+                console.log("sub", recipe)
+                
+                this.recipeDetails = recipe;
+
+
+            }
+        })
         
     }
 
-    openDetails(item: Recipe){
-        this.recipeDetails = item;
 
+
+    deleteDetails(item:Recipe){
+        this.recipeDetails = null;
     }
 }
