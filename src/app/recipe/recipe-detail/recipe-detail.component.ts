@@ -33,5 +33,5 @@ export class RecipeDetailComponent implements OnInit {
       this.slService.addIngredient(ingredient);
     })
   }
- 
+   
 }
