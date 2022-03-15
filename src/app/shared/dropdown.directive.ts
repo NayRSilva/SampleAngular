@@ -9,11 +9,16 @@ export class DropdownDirective {
 
     }
     private shouldOpen = false;
-    @HostListener('click') clickButton(){
-        this.shouldOpen= !this.shouldOpen
+    @HostListener('document:click', ['$event']) clickButton(){
+        this.shouldOpen= this.elRef.nativeElement.contains(event.target)?
+        !this.shouldOpen:false;
+        let element = this.elRef.nativeElement.querySelector(".dropdown-menu")
 
         if(this.shouldOpen){
-            this.renderer.addClass(this.elRef,"open");
+            this.renderer.addClass(element,"show");
+        }
+        else{
+            this.renderer.removeClass(element, "show");
         }
 
     }
