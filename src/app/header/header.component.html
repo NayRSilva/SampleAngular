@@ -5,17 +5,17 @@
         </div>
        
             <ul class="nav navbar-nav ">
-                <li> <a class="nav-link" href="#">Recipes</a>  </li>  
-                 <li><a class="nav-link" href="#">Shopping List</a> </li>
+                <li> <a class="nav-link" href="#" (click)="openRecipes()">Recipes</a>  </li>  
+                 <li><a class="nav-link" href="#" (click)="openList()">Shopping List</a> </li>
             </ul>
-            <ul class="nav navbar-nav ml-auto">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <ul class="nav navbar-nav ml-auto dropstart" ngbDropdown display="dynamic" placement="bottom-right">
+                <button class="btn btn-secondary dropdown-toggle mybutton" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
                     Server
                   </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <ul class="dropdown-menu customclass" aria-labelledby="dropdownMenuButton1" ngbDropdownMenu >
+                    <li><a class="dropdown-item" href="#" ngbDropdownItem>Action</a></li>
+                    <li><a class="dropdown-item" href="#" ngbDropdownItem>Another action</a></li>
+                    <li><a class="dropdown-item" href="#" ngbDropdownItem>Something else here</a></li>
                   </ul>
 
             </ul>

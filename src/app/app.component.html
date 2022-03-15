@@ -1,8 +1,11 @@
-<app-header></app-header>
-<div class="container"> 
+<app-header (navigationEvent)="onNavigationEvent($event)"></app-header>
+<div class="container mt-2"> 
 <!-- <app-main-page></app-main-page> -->
-<recipe-list></recipe-list>
-<app-recipe-detail></app-recipe-detail>
-<app-shopping-edit></app-shopping-edit>
-<app-list></app-list>
+<div *ngIf="pageOpened === 'recipe' ">
+    <recipe-component></recipe-component>    
+</div>
+<div *ngIf="pageOpened === 'shopping' ">
+    <app-list></app-list>
+
+</div>
 </div>

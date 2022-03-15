@@ -1,1 +1,13 @@
-<p>recipe-item works!</p>
+<div class="col-xm-12 item-recipe">
+    <a href="#" class="list-group-item clearfix mt-2" (click)="onItemClick(recipe)">
+        <div class="col-8 float-left ">
+            <h4 class="fw-bold text-capitalize">{{recipe.name}}</h4>
+            <p class="list-group-item-text fw-normal">{{recipe.body}}</p>
+        </div>
+        <span class=" col-4 float-right">
+            <img src= "{{recipe.imagePath}}" alt="" class="image-responsive" style="max-height:50px;">
+        </span>
+
+    </a>
+    <!-- <app-recipe-item></app-recipe-item> -->
+</div>

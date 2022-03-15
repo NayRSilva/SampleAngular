@@ -1,3 +1,4 @@
+import { DropdownDirective } from './shared/dropdown.directive';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -10,6 +11,7 @@ import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component'
 import { RecipeDetailComponent } from './recipe/recipe-detail/recipe-detail.component';
 import { RecipeItemComponent } from './recipe/recipe-list/recipe-item/recipe-item.component';
 import { HeaderComponent } from './header/header.component';
+import { RecipeComponent } from './recipe/recipe.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { HeaderComponent } from './header/header.component';
     ShoppingEditComponent,
     RecipeDetailComponent,
     RecipeItemComponent,
-    HeaderComponent
+    HeaderComponent,
+    RecipeComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
