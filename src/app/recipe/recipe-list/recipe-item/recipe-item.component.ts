@@ -18,6 +18,5 @@ export class RecipeItemComponent implements OnInit {
 
   onItemClick(recipe : Recipe){
     this.recipeService.changeSelectedRecipe(recipe);
-
-}
+  }
 }

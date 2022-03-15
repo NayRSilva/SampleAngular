@@ -12,8 +12,8 @@ export class RecipeService {
   onChangedRecipe = this.selectedRecipe.asObservable();
 
   recipes: Array<Recipe> = [
-    new Recipe("cookie", "this is a cookie test", 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/375px-2ChocolateChipCookies.jpg'),
-    new Recipe("chicken", "say another thing", 'https://www.thespruceeats.com/thmb/PRu9dPS_pM7I_LJg8aDMTleOI24=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-southern-fried-chicken-3056867-hero-01-58b66ff9e2f14b86bfdd50c7088cfe45.jpg' )
+    new Recipe("cookie", "this is a cookie test", 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/375px-2ChocolateChipCookies.jpg',[new Ingredient("chocolate", 2), new Ingredient("flour", 1)]),
+    new Recipe("chicken", "say another thing", 'https://www.thespruceeats.com/thmb/PRu9dPS_pM7I_LJg8aDMTleOI24=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-southern-fried-chicken-3056867-hero-01-58b66ff9e2f14b86bfdd50c7088cfe45.jpg', [] )
 ];
 
   constructor() { }

@@ -5,10 +5,10 @@ export class Recipe{
     public imagePath:string;
     public ingredients: Array<Ingredient>;
 
-    constructor(name:string, body:string, imagePath:string){
+    constructor(name:string, body:string, imagePath:string, ingredients: Array<Ingredient> = []){
         this.name = name;
         this.body = body;
         this.imagePath = imagePath;
-        this.ingredients = [];
+        this.ingredients = ingredients;
     }
 }

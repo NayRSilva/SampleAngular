@@ -1,3 +1,5 @@
+import { ShoppingListService } from './../../services/shopping-list.service';
+import { Ingredient } from 'src/app/models/ingredient.model';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
@@ -11,9 +13,11 @@ export class RecipeDetailComponent implements OnInit {
   @Output() deletedRecipe = new EventEmitter<Recipe>();
   @Input() recipe : Recipe;
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private slService: ShoppingListService) { }
 
   ngOnInit(): void {
+
+
   }
 
   deleteRecipe(){
@@ -22,4 +26,12 @@ export class RecipeDetailComponent implements OnInit {
 
   }
 
+  
+
+  addToShoppingList(){
+    this.recipe.ingredients.forEach(ingredient =>{
+      this.slService.addIngredient(ingredient);
+    })
+  }
+ 
 }
