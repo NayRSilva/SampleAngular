@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Recipe} from '../../models/recipe.model';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
     selector: 'recipe-list',
@@ -8,24 +9,18 @@ import {Recipe} from '../../models/recipe.model';
 })
 
 export class RecipeListComponent implements OnInit{
-    @Output() recipeDetails = new EventEmitter<Recipe>();
-    recipes: Array<Recipe> = [
-        new Recipe("cookie", "this is a cookie test", 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/375px-2ChocolateChipCookies.jpg'),
-        new Recipe("chicken", "say another thing", 'https://www.thespruceeats.com/thmb/PRu9dPS_pM7I_LJg8aDMTleOI24=/940x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-southern-fried-chicken-3056867-hero-01-58b66ff9e2f14b86bfdd50c7088cfe45.jpg' )
-    ];
+    recipes: Array<Recipe> = [];
 
-    constructor(){
+    constructor(private recipeService: RecipeService){
 
     }
 
     ngOnInit(): void {
+        this.recipes = this.recipeService.recipes;
         
     }
 
-    openDetails(itemRecipe: Recipe){
-        this.recipeDetails.emit(itemRecipe);
 
-    }
 
  
 }

@@ -5,5 +5,5 @@
 </div>
 <hr>
 <div class="row" *ngFor="let recipe of recipes">
-    <app-recipe-item (itemClicked)="openDetails($event)" [itemRecipe]= recipe ></app-recipe-item>
+    <app-recipe-item [itemRecipe]= recipe ></app-recipe-item>
 </div>
